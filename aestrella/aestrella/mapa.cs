@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace aestrella
 {
-    public partial class Form1 : Form
+    public partial class mapa : Form
     {
-        public Form1()
+        public mapa()
         {
             InitializeComponent();
+        }
+
+        private void mapa_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Configuracion.menuU.Show();
         }
     }
 }
