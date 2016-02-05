@@ -15,6 +15,8 @@ namespace aestrella
         public static menu menuU;
         public static mapa mapaU;
 
+        public static Casilla[,] matriz;
+
         public static int Dimensionx
         {
             get

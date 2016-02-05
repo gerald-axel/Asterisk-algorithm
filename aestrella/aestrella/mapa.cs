@@ -21,5 +21,25 @@ namespace aestrella
         {
             Configuracion.menuU.Show();
         }
+
+        private void mapa_Load(object sender, EventArgs e)
+        {
+            Configuracion.matriz = new Casilla[Configuracion.Dimensionx,Configuracion.Dimensiony];
+            panelbotones.Controls.Clear();
+            for(int x = 0; x < Configuracion.Dimensionx; x++)
+            {
+                for (int y = 0; y < Configuracion.Dimensiony; y++)
+                {
+                    Casilla c = new Casilla();
+                    c.button.Location = new Point(x*20, y*20);
+                    panelbotones.Controls.Add(c.button);
+                    c.X = x;
+                    c.Y = y;
+                    Configuracion.matriz[x,y] = c;
+                }
+            }
+            panelbotones.AutoSize = true;
+            this.AutoSize = true;
+        }
     }
 }
