@@ -33,6 +33,7 @@ namespace aestrella
                     Casilla c = new Casilla();
                     c.button.Location = new Point(x*20, y*20);
                     panelbotones.Controls.Add(c.button);
+                    c.button.BackColor = default(Color);
                     c.X = x;
                     c.Y = y;
                     Configuracion.matriz[x,y] = c;
@@ -40,6 +41,43 @@ namespace aestrella
             }
             panelbotones.AutoSize = true;
             this.AutoSize = true;
+        }
+
+        private void nodoinicialr_CheckedChanged(object sender, EventArgs e)
+        {
+            Configuracion.Marcado = 1;
+        }
+
+        private void nodofinalr_CheckedChanged(object sender, EventArgs e)
+        {
+            Configuracion.Marcado = 2;
+        }
+
+        private void bloqueor_CheckedChanged(object sender, EventArgs e)
+        {
+            Configuracion.Marcado = 3;
+        }
+
+        private void eliminarr_CheckedChanged(object sender, EventArgs e)
+        {
+            Configuracion.Marcado = 4;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Arbol.Nodoinicial != null && Arbol.Nodofinal != null)
+            {
+                Arbol.algoritmo_estrella();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado inicio o fin.");
+            }
+        }
+
+        private void nodofinalr_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Configuracion.Marcado = 2;
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arbol.cs" />
     <Compile Include="Casilla.cs" />
     <Compile Include="Configuracion.cs" />
     <Compile Include="menu.cs">

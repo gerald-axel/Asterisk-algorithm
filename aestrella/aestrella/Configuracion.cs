@@ -16,6 +16,9 @@ namespace aestrella
         public static mapa mapaU;
 
         public static Casilla[,] matriz;
+        private static Casilla Nodoinicial;
+        private static Casilla Nodofinal;
+        private static int marcado;
 
         public static int Dimensionx
         {
@@ -66,6 +69,19 @@ namespace aestrella
             set
             {
                 pesodiagonal = value;
+            }
+        }
+
+        public static int Marcado
+        {
+            get
+            {
+                return marcado;
+            }
+
+            set
+            {
+                marcado = value;
             }
         }
     }
